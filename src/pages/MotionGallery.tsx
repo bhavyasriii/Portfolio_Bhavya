@@ -1,77 +1,52 @@
-import { useMemo } from "react";
-import Navbar from "../components/Navbar";
-
-type MotionVideo = {
-  id: string;
-  videoSrc: string; // must be /public path like "/motion/airpods-motion.mp4"
-};
-
-function publicUrl(pathFromPublic: string) {
-  const clean = pathFromPublic.startsWith("/") ? pathFromPublic.slice(1) : pathFromPublic;
-  return `${import.meta.env.BASE_URL}${clean}`;
-}
-
-export default function MotionGallery() {
-  const videos: MotionVideo[] = useMemo(
-    () => [
-      { id: "airpods", videoSrc: "/motion/airpods-motion.mp4" },
-
-      // ✅ Add more videos like this:
-      // { id: "study-2", videoSrc: "/motion/study-2.mp4" },
-      // { id: "study-3", videoSrc: "/motion/study-3.mp4" },
-    ],
-    []
-  );
-
+import React from "react";
+import heroImage from "../assets/case-studies/healthcare-booking/hero/hero-visual-desktop.png";
+const HeroSection = () => {
   return (
-    <div className="min-h-screen bg-[#f4f5f6] px-5 py-10 dark:bg-[#0b1220]">
-      <Navbar />
-
-      <div className="pt-20">
-        <div
-          className="mx-auto max-w-6xl rounded-[28px] border border-black/5 bg-gradient-to-br from-white via-sky-50 to-indigo-50 p-8 shadow-[0_25px_80px_rgba(0,0,0,0.08)]
-                     dark:border-white/10 dark:from-[#0f172a] dark:via-[#0b1b33] dark:to-[#111827] dark:shadow-[0_25px_80px_rgba(0,0,0,0.55)]"
-        >
-          <h1 className="text-2xl md:text-3xl font-extrabold text-black/90 dark:text-white/90">
-            My Motion Studies / Designs
+    <section className="w-full bg-white py-16 md:py-24">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 grid md:grid-cols-2 gap-12 items-center">
+        
+        {/* LEFT SIDE - TEXT */}
+        <div className="space-y-6">
+          
+          {/* Title */}
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight text-gray-900">
+            Guided Appointment Booking for a patient portal
           </h1>
 
-          <div className="mt-6 space-y-6">
-            {videos.map((v) => {
-              const src = publicUrl(v.videoSrc);
+          {/* Tagline */}
+          <p className="text-lg md:text-xl text-gray-600 max-w-xl">
+            A guided healthcare booking experience that helps patients find the right specialist in under 60 seconds.
+          </p>
 
-              return (
-                <div
-                  key={v.id}
-                  className="overflow-hidden rounded-2xl border border-black/10 bg-black shadow-[0_12px_30px_rgba(0,0,0,0.08)]
-                             dark:border-white/10 dark:shadow-none"
-                >
-                  {/* ✅ Keeps full video visible (no cropping) */}
-                  <div className="aspect-video w-full">
-                    <video
-                      key={src}
-                      className="h-full w-full object-contain bg-black"
-                      controls
-                      playsInline
-                      preload="auto"
-                      onLoadedData={(e) => {
-                        const vid = e.currentTarget;
-                        vid.play().catch(() => {});
-                      }}
-                      onError={(e) => {
-                        // @ts-ignore
-                        console.log("Video failed:", src, e?.currentTarget?.error);
-                      }}
-                    >
-                      <source src={src} type="video/mp4" />
-                    </video>
-                  </div>
-                </div>
-              );
-            })}
+          {/* Metadata Chips */}
+          <div className="flex flex-wrap gap-3 pt-4">
+            <span className="px-4 py-2 bg-gray-100 rounded-full text-sm font-medium">
+              UX/UI Designer
+            </span>
+            <span className="px-4 py-2 bg-gray-100 rounded-full text-sm font-medium">
+              4 Weeks
+            </span>
+            <span className="px-4 py-2 bg-gray-100 rounded-full text-sm font-medium">
+              Figma
+            </span>
+            <span className="px-4 py-2 bg-gray-100 rounded-full text-sm font-medium">
+              Healthcare App
+            </span>
           </div>
         </div>
+
+        {/* RIGHT SIDE - IMAGE */}
+        <div className="relative flex justify-center">
+          <img
+            src={heroImage}
+            alt="Healthcare booking app UI"
+            className="w-full max-w-lg md:max-w-xl object-contain"
+          />
+        </div>
+
       </div>
-    </div>
+    </section>
   );
-}
+};
+
+export default HeroSection;
