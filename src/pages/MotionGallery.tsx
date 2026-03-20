@@ -1,4 +1,4 @@
-import React from "react";
+
 import heroImage from "../assets/case-studies/healthcare-booking/hero/hero-visual-desktop.png";
 const HeroSection = () => {
   return (
