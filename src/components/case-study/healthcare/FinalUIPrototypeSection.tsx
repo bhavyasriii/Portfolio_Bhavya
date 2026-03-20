@@ -1,12 +1,10 @@
 import React from "react";
-import prototypeGif from "../../../assets/case-studies/healthcare-booking/prototype/prototype-demo.gif";
+import prototypeVideo from "../../../assets/case-studies/healthcare-booking/prototype/prototype-demo.mp4";
 
 const FinalUIPrototypeSection: React.FC = () => {
   return (
     <section className="w-full bg-[#F8FFF4] py-24 md:py-32">
       <div className="max-w-6xl mx-auto px-6 md:px-12">
-
-        {/* SECTION HEADER */}
         <div className="text-center max-w-3xl mx-auto">
           <p className="text-sm font-semibold tracking-[0.2em] uppercase text-green-600">
             Final UI & Prototype
@@ -24,32 +22,27 @@ const FinalUIPrototypeSection: React.FC = () => {
           </p>
         </div>
 
-        {/* PROTOTYPE DISPLAY */}
         <div className="mt-20 flex justify-center">
-
           <div className="relative group">
-
-            {/* Glow Background */}
             <div className="absolute inset-0 bg-green-200/40 blur-3xl rounded-full scale-110 opacity-70 group-hover:opacity-90 transition duration-500"></div>
 
-            {/* GIF CONTAINER */}
             <div className="relative bg-white rounded-[2.5rem] p-4 shadow-2xl border border-gray-200">
-
-              <img
-                src={prototypeGif}
-                alt="Healthcare booking prototype demo"
+              <video
+                src={prototypeVideo}
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
                 className="w-[260px] md:w-[320px] rounded-[2rem] shadow-xl transition duration-500 group-hover:scale-[1.03]"
-              />
-
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
-
           </div>
-
         </div>
 
-        {/* INSIGHT CARDS */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-6">
-
           <div className="rounded-3xl bg-white border border-gray-200 p-6 shadow-sm hover:shadow-md transition">
             <p className="text-sm font-semibold text-green-600 uppercase">
               Guided Flow
@@ -79,10 +72,8 @@ const FinalUIPrototypeSection: React.FC = () => {
               before completing their appointment booking.
             </p>
           </div>
-
         </div>
 
-        {/* FINAL OUTCOME */}
         <div className="mt-16 text-center max-w-2xl mx-auto">
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-green-700">
             Outcome
@@ -94,7 +85,6 @@ const FinalUIPrototypeSection: React.FC = () => {
             identifying symptoms to confirming their appointment.
           </p>
         </div>
-
       </div>
     </section>
   );
