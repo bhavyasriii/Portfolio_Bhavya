@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import Navbar from "../components/Navbar";
 import { AnimatePresence, motion } from "framer-motion";
-import { motionStudies, MotionStudy } from "../data/motionStudies";
-
+import { motionStudies } from "../data/motionStudies";
+import type { MotionStudy } from "../data/motionStudies";
 function publicUrl(pathFromPublic: string) {
   const clean = pathFromPublic.startsWith("/") ? pathFromPublic.slice(1) : pathFromPublic;
   return `${import.meta.env.BASE_URL}${clean}`;
