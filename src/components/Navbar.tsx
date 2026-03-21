@@ -19,7 +19,7 @@ export default function Navbar() {
     []
   );
 
-  const resumeUrl = "/resume.pdf";
+  const resumeUrl = "/images/Bhavyasri_Resume_Frontend_main.pdf";
 
   const [activeId, setActiveId] = useState<string>("about");
   const [open, setOpen] = useState(false);

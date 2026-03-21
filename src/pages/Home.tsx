@@ -214,7 +214,7 @@ export default function Home() {
   const email = "bhavyasrireddy267@gmail.com";
   const githubUrl = "https://github.com/bhavyasriii";
   const linkedinUrl = "https://www.linkedin.com/in/bhavyasri-m-593aa6214/";
-  const resumeUrl = "/resume.pdf";
+  const resumeUrl = "/images/Bhavyasri_Resume_Frontend_main.pdf";
 
   const copyEmail = async () => {
     try {
