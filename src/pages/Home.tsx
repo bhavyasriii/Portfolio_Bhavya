@@ -31,7 +31,7 @@ type DevProject = {
   githubUrl?: string;
 };
 
-type MotionStudy = {
+/*type MotionStudy = {
   id: string;
   title: string;
   tag: string;
@@ -39,7 +39,7 @@ type MotionStudy = {
   videoSrc: string;
   bullets: string[];
   moreUrl?: string;
-};
+};*/
 
 const skills: Skill[] = [
   { title: "Component Architecture", desc: "Reusable components • Scalable structure • Clean patterns" },
@@ -191,7 +191,7 @@ export default function Home() {
     []
   );
 
-  const motionStudies: MotionStudy[] = useMemo(
+  /*const motionStudies: MotionStudy[] = useMemo(
     () => [
       {
         id: "airpods-hero",
@@ -209,7 +209,7 @@ export default function Home() {
       },
     ],
     []
-  );
+  );*/
 
   const email = "bhavyasrireddy267@gmail.com";
   const githubUrl = "https://github.com/bhavyasriii";
